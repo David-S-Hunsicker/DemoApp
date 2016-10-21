@@ -11,6 +11,12 @@ namespace DemoApp
     {
         public App()
         {
+            Button btn = new Button();
+            btn.Text = "Click this";
+            btn.Clicked += (sender, args) =>
+              {
+                  btn.Text = "Button is clicked";
+              };
             // The root page of your application
             var content = new ContentPage
             {
@@ -18,11 +24,15 @@ namespace DemoApp
                 Content = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
+                    Children =
+                    {
+                        new Label
+                        {
                             HorizontalTextAlignment = TextAlignment.Center,
                             Text = "Welcome to Xamarin Forms!"
-                        }
+                        },
+                        btn
+
                     }
                 }
             };
